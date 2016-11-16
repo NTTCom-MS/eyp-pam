@@ -1,19 +1,31 @@
 class pam::params {
 
+  $pam_package_name='pam'
+
   case $::osfamily
   {
     'redhat':
     {
+      $use_authconfig=true
       case $::operatingsystemrelease
       {
-        /^[56].*$/:
+        /^5.*$/:
         {
+          $password_hash_algo_default = 'sha512'
           $cracklib_package_name = undef
           $pwqualityconf = undef
           $pamcracklib = true
         }
-        /^[7].*$/:
+        /^6.*$/:
         {
+          $password_hash_algo_default = 'sha512'
+          $cracklib_package_name = undef
+          $pwqualityconf = undef
+          $pamcracklib = true
+        }
+        /^7.*$/:
+        {
+          $password_hash_algo_default = 'sha512'
           $cracklib_package_name = 'libpwquality'
           $pwqualityconf = '/etc/security/pwquality.conf'
           $pamcracklib = false
@@ -23,6 +35,7 @@ class pam::params {
     }
     'Debian':
     {
+      $use_authconfig=false
       case $::operatingsystem
       {
         'Ubuntu':

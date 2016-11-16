@@ -1,23 +1,18 @@
-#
-class pam::cracklib(
+class pam::unix(
                       $manage_package        = true,
                       $package_ensure        = 'installed',
                       $manage_service        = true,
                       $manage_docker_service = true,
                       $service_ensure        = 'running',
                       $service_enable        = true,
-                      $minlen                = '14',
-                      $dcredit               = '-1',
-                      $ucredit               = '-1',
-                      $ocredit               = '-1',
-                      $lcredit               = '-1',
+                      $password_hash_algo    = $password_hash_algo_default,
                     ) inherits pam::params{
 
   include ::pam
 
   Class['::pam'] ->
-  class { '::pam::cracklib::install': } ->
-  class { '::pam::cracklib::config': } ->
-  Class['::pam::cracklib']
+  class { '::pam::unix::install': } ->
+  class { '::pam::unix::config': } ->
+  Class['::pam::unix']
 
 }
