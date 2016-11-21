@@ -11,6 +11,10 @@ class pam::lockout(
                       $manage_docker_service = true,
                       $service_ensure        = 'running',
                       $service_enable        = true,
+                      $even_deny_root        = false,
+                      $unlock_time           = '600',
+                      $deny_failed           = '3',
+                      $silent                = true,
                     ) inherits pam::params{
 
   include ::pam
