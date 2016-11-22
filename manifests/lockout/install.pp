@@ -4,7 +4,6 @@ class pam::lockout::install inherits pam::lockout {
   {
     'faillock':
     {
-
     }
     default:
     {

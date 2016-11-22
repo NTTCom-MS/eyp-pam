@@ -64,7 +64,6 @@ class pam::params {
           {
             /^14.*$/:
             {
-              fail('not implemented')
               $pam_lockout='tally2'
             }
             default: { fail("Unsupported Ubuntu version! - ${::operatingsystemrelease}")  }
@@ -77,6 +76,8 @@ class pam::params {
     'Suse':
     {
       $pam_package_name='pam'
+      #TODO:
+      $use_authconfig=false
     }
     default: { fail('Unsupported OS!')  }
   }
