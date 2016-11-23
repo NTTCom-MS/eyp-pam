@@ -15,9 +15,15 @@ class pam::lockout(
                       $unlock_time           = '600',
                       $deny_failed           = '3',
                       $silent                = true,
+                      $user_whitelist        = undef,
                     ) inherits pam::params{
 
   include ::pam
+
+  if($user_whitelist!=undef)
+  {
+    validate_array($user_whitelist)
+  }
 
   Class['::pam'] ->
   class { '::pam::lockout::install': } ->

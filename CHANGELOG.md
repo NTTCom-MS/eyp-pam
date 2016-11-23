@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.1.5
+
+* added **user_whitelist** to disable account locking for a given set of users
+
 ## 0.1.4
 
 *  fixed ubuntu restrictions
