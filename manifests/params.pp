@@ -2,6 +2,8 @@ class pam::params {
 
   $limits_conf='/etc/security/limits.conf'
 
+  $pamd_su = '/etc/pam.d/su'
+
   case $::osfamily
   {
     'redhat':
