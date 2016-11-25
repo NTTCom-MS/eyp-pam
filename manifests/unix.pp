@@ -6,6 +6,7 @@ class pam::unix(
                       $service_ensure        = 'running',
                       $service_enable        = true,
                       $password_hash_algo    = $password_hash_algo_default,
+                      $remember              = '5',
                     ) inherits pam::params{
 
   include ::pam

@@ -22,8 +22,8 @@ class pam::lockout::config inherits pam::lockout {
         }
 
         file { $pam::params::real_systema_auth_conf:
-          ensure => 'link',
-          target => $pam::params::authconfig_systemauth_custom_file,
+          ensure  => 'link',
+          target  => $pam::params::authconfig_systemauth_custom_file,
           require => File[$pam::params::authconfig_systemauth_custom_file],
         }
       }
@@ -39,8 +39,8 @@ class pam::lockout::config inherits pam::lockout {
         }
 
         file { $pam::params::real_password_auth_conf:
-          ensure => 'link',
-          target => $pam::params::authconfig_password_custom_file,
+          ensure  => 'link',
+          target  => $pam::params::authconfig_password_custom_file,
           require => File[$pam::params::authconfig_password_custom_file],
         }
       }

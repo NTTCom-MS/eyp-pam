@@ -10,7 +10,7 @@ class pam::wheel::config inherits pam::wheel {
 
   # [root@centos7 ~]# grep whee /etc/pam.d/su | grep requi | sed 's/#\(auth[ \t]*required[ \t]*pam_wheel.so[ \t]*use_uid\)/\1/'
   # # Uncomment the following line to require a user to be in the "wheel" group.
-  # auth		required	pam_wheel.so use_uid
+  # auth required pam_wheel.so use_uid
 
   if($limit_su_to_wheel)
   {

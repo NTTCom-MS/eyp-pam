@@ -8,6 +8,7 @@ class pam::params {
   {
     'redhat':
     {
+      $pam_systemauth_system='/etc/pam.d/system-auth-ac'
       $pam_package_name='pam'
       $use_authconfig=true
       case $::operatingsystemrelease

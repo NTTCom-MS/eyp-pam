@@ -14,7 +14,7 @@ class pam::cracklib::install inherits pam::cracklib {
     }
   }
 
-  if(!$use_authconfig)
+  if(!$pam::params::use_authconfig)
   {
     fail('feature not available')
   }
