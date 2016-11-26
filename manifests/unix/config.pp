@@ -17,6 +17,7 @@ class pam::unix::config inherits pam::unix {
   exec { 'the north remembers':
     command => "sed 's/^\\(password[ \\t]*sufficient[ \\t]*pam_unix.so.*[ \\t]remember=\\)[0-9]*\\(.*\\)$/\\1${pam::unix::remember}\\2/' -i ${pam::params::pam_systemauth_system}",
     unless  => "grep -P \"^password[ \\t]*sufficient[ \\t]*pam_unix.so.*[ \\t]remember=${pam::unix::remember}.*$\" ${pam::params::pam_systemauth_system}",
+    require => Exec['red wedding'],
   }
 
   if($pam::params::use_authconfig)

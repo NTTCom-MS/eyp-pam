@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.1.8
+
+* fixed dependency for **pam::unix**
+
 ## 0.1.7
 
 * added remember to **pam::unix**
