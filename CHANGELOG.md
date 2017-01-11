@@ -2,7 +2,7 @@
 
 ## 0.1.9
 
-* updated dependencies
+* updated module dependencies
 
 ## 0.1.8
 
