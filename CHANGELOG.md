@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.1.9
+
+* updated dependencies
+
 ## 0.1.8
 
 * fixed dependency for **pam::unix**
