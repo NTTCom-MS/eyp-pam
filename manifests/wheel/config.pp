@@ -12,7 +12,7 @@ class pam::wheel::config inherits pam::wheel {
   # # Uncomment the following line to require a user to be in the "wheel" group.
   # auth required pam_wheel.so use_uid
 
-  if($limit_su_to_wheel)
+  if($pam::wheel::limit_su_to_wheel)
   {
     exec { 'limit su to wheel group':
       command => "sed 's/^#\\(auth[ \\t]*required[ \\t]*pam_wheel.so[ \\t]*use_uid.*\\)$/\\1/' -i ${pam::params::pamd_su}",

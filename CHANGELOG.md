@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.1.10
+
+* moved **audit::tty** to **pam::ttyaudit**
+
 ## 0.1.9
 
 * updated module dependencies

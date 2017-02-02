@@ -1,6 +1,6 @@
 {
   "name": "eyp-pam",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "author": "eyp",
   "summary": "PAM modules and /etc/security/limits.conf management",
   "license": "Apache-2.0",

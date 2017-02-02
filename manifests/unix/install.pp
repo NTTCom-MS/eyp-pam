@@ -10,7 +10,7 @@ class pam::unix::install inherits pam::unix {
   #     ensure => $pam::package_ensure,
   #   }
   # }
-  if(!$use_authconfig)
+  if(!$pam::params::use_authconfig)
   {
     fail('feature not available')
   }

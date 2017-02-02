@@ -5,10 +5,10 @@
 class pam::config inherits pam {
 
   concat { $pam::params::limits_conf:
-    ensure  => 'present',
-    owner   => 'root',
-    group   => 'root',
-    mode    => '0644',
+    ensure => 'present',
+    owner  => 'root',
+    group  => 'root',
+    mode   => '0644',
   }
 
   concat::fragment{ 'limits.conf header':
