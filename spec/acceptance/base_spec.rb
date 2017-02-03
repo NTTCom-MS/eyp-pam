@@ -10,6 +10,14 @@ describe 'pam class' do
 
       class { 'pam': }
 
+      # class { 'pam::cracklib': }
+
+      # class { 'pam::unix': }
+
+      # class { 'pam::lockout': }
+
+      class { 'pam::wheel': }
+
       EOF
 
       # Run it twice and test for idempotency
