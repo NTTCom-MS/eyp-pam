@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.1.11
+
+* added **pam::securetty** 
+
 ## 0.1.10
 
 * moved **audit::tty** to **pam::ttyaudit**

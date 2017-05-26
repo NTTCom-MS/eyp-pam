@@ -17,9 +17,7 @@
 
 ## Overview
 
-A one-maybe-two sentence summary of what the module does/what problem it solves.
-This is your 30 second elevator pitch for your module. Consider including
-OS/Puppet version it works with.
+PAM modules, /etc/security/limits.conf and /etc/securetty management
 
 ## Module Description
 
@@ -35,22 +33,39 @@ management, etc.) this is the time to mention it.
 
 ### What pam affects
 
-* A list of files, packages, services, or operations that the module will alter,
-  impact, or execute on the system it's installed on.
-* This is a great place to stick any warnings.
-* Can be in list or paragraph form.
+* /etc/security/limits.conf
+* system-auth config (/etc/pam.d)
 
 ### Setup Requirements
 
-This module requires pluginsync enabled 
+This module requires pluginsync enabled
 
 ### Beginning with pam
 
-The very basic steps needed for a user to get the module up and running.
+#### limits
 
-If your most recent release breaks compatibility or requires particular steps
-for upgrading, you may wish to include an additional section here: Upgrading
-(For an example, see http://forge.puppetlabs.com/puppetlabs/firewall).
+```puppet
+class { "limits": }
+
+limits::limit { "nofile *":
+  domain => "*",
+  item => 'nofile',
+  value => '123456',
+}
+
+limits::limit { "nproc *":
+  domain => "*",
+  item => 'nproc',
+  value => '123456',
+}
+```
+
+This will generate the following entries:
+
+```
+* - nofile 123456
+* - nproc 123456
+```
 
 ## Usage
 
@@ -59,10 +74,35 @@ the fancy stuff with your module here.
 
 ## Reference
 
-Here, list the classes, types, providers, facts, etc contained in your module.
-This section should include all of the under-the-hood workings of your module so
-people know what the module is touching on their system but don't need to mess
-with things. (We are working on automating this section!)
+### defines
+
+#### pam::limit
+
+All items support the values -1, unlimited or infinity indicating no limit, except for priority and nice.  
+
+* domain: user, %group or * (means all)
+* type: soft, hard or - (means both)
+* item: can be one of the following:
+ * core - limits the core file size (KB)
+ * data - max data size (KB)
+ * fsize - maximum filesize (KB)
+ * memlock - max locked-in-memory address space (KB)
+ * nofile - max number of open files
+ * rss - max resident set size (KB)
+ * stack - max stack size (KB)
+ * cpu - max CPU time (MIN)
+ * nproc - max number of processes
+ * as - address space limit (KB)
+ * maxlogins - max number of logins for this user
+ * maxsyslogins - max number of logins on the system
+ * priority - the priority to run user process with
+ * locks - max number of file locks the user can hold
+ * sigpending - max number of pending signals
+ * msgqueue - max memory used by POSIX message queues (bytes)
+ * nice - max nice priority allowed to raise to values: [-20, 19]
+ * rtprio - max realtime priority
+ * chroot - change root to directory (Debian-specific)
+* value: value for item
 
 ## Limitations
 

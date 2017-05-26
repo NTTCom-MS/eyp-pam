@@ -1,8 +1,8 @@
 {
   "name": "eyp-pam",
-  "version": "0.1.10",
+  "version": "0.1.11",
   "author": "eyp",
-  "summary": "PAM modules and /etc/security/limits.conf management",
+  "summary": "PAM modules, /etc/security/limits.conf and /etc/securetty management",
   "license": "Apache-2.0",
   "source": "https://github.com/NTTCom-MS/eyp-pam",
   "project_page": null,
@@ -39,10 +39,6 @@
     }
   ],
   "requirements": [
-    {
-      "name": "pe",
-      "version_requirement": ">= 3.0.0"
-    },
     {
       "name": "puppet",
       "version_requirement": ">= 3.0.0"
