@@ -1,8 +1,12 @@
 # CHANGELOG
 
+## 0.1.12
+
+* allow empty securetty file
+
 ## 0.1.11
 
-* added **pam::securetty** 
+* added **pam::securetty**
 
 ## 0.1.10
 
