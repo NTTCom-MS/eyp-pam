@@ -4,7 +4,7 @@
 # pam_tally2
 # http://myexperienceswithunix.blogspot.com.es/2016/09/locking-user-accounts-with-pam-faillock.html
 #
-class pam::lockout(
+class pam::lockout (
                       $manage_package        = true,
                       $package_ensure        = 'installed',
                       $manage_service        = true,
@@ -12,9 +12,10 @@ class pam::lockout(
                       $service_ensure        = 'running',
                       $service_enable        = true,
                       $even_deny_root        = false,
-                      $unlock_time           = '600',
-                      $deny_failed           = '3',
-                      $silent                = true,
+                      $unlock_time           = '900',
+                      $deny_failed           = '5',
+                      $silent_preauth        = true,
+                      $silent_authfail       = false,
                       $user_whitelist        = undef,
                     ) inherits pam::params{
 

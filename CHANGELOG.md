@@ -1,5 +1,13 @@
 # CHANGELOG
 
+## 0.1.14
+
+* improved CIS support by setting an arbitrary option order
+
+## 0.1.13
+
+* changed default settings for **pam::lockout**
+
 ## 0.1.12
 
 * allow empty securetty file

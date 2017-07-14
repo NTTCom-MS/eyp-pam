@@ -21,13 +21,39 @@ PAM modules, /etc/security/limits.conf and /etc/securetty management
 
 ## Module Description
 
-If applicable, this section should have a brief description of the technology
-the module integrates with and what that integration enables. This section
-should answer the questions: "What does this module *do*?" and "Why would I use
-it?"
+### pam::lockout
 
-If your module has a range of functionality (installation, configuration,
-management, etc.) this is the time to mention it.
+CIS compliance using pam_faillock for CentOS 6 and 7:
+
+```
+# cat /etc/pam.d/password-auth
+auth        required       pam_faillock.so preauth audit silent deny=5 unlock_time=900
+auth        include        password-auth-ac
+auth        [default=die]  pam_faillock.so authfail audit deny=5 unlock_time=900
+auth        sufficient     pam_faillock.so authsucc audit deny=5 unlock_time=900
+
+account     required       pam_faillock.so
+account     include        password-auth-ac
+
+password    include        password-auth-ac
+
+session     include        password-auth-ac
+```
+
+```
+# cat /etc/pam.d/system-auth
+auth        required       pam_faillock.so preauth audit silent deny=5 unlock_time=900
+auth        include        system-auth-ac
+auth        [default=die]  pam_faillock.so authfail audit deny=5 unlock_time=900
+auth        sufficient     pam_faillock.so authsucc audit deny=5 unlock_time=900
+
+account     required       pam_faillock.so
+account     include        system-auth-ac
+
+password    include        system-auth-ac
+
+session     include        system-auth-ac
+```
 
 ## Setup
 
