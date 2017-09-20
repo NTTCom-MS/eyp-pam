@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.1.15
+
+* added ensure to **pam::ttyaudit**
+
 ## 0.1.14
 
 * improved CIS support by setting an arbitrary option order

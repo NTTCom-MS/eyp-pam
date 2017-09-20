@@ -43,7 +43,7 @@ class pam::params {
           $cracklib_package_name = 'libpwquality'
           $pwqualityconf = '/etc/security/pwquality.conf'
           $pamcracklib = false
-          $pam_lockout='faillock'
+          $pam_lockout = 'faillock'
           #
           $authconfig_systemauth_custom_file='/etc/pam.d/system-auth-local'
           $authconfig_systemauth_template="${module_name}/lockout/faillock/systemauth.erb"
