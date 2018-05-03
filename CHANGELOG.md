@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 0.1.16
+
+* added ensure to **pam::securetty**
+* basic Ubuntu 18.04 support
+
 ## 0.1.15
 
 * added ensure to **pam::ttyaudit**

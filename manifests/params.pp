@@ -65,7 +65,7 @@ class pam::params {
         {
           case $::operatingsystemrelease
           {
-            /^1[46].*$/:
+            /^1[468].*$/:
             {
               $pam_lockout='tally2'
             }

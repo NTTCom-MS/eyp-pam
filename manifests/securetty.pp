@@ -1,7 +1,10 @@
 # puppet2sitepp @securettys
+# @param tty tty name (default: resource's name)
+# @param order securetty order (default: 42)
 define pam::securetty (
-                        $tty   = $name,
-                        $order = '42',
+                        $tty    = $name,
+                        $order  = '42',
+                        $ensure = 'present',
                       ) {
 
   if(!defined(Concat['/etc/securetty']))
@@ -14,12 +17,21 @@ define pam::securetty (
     }
   }
 
-  if(!empty($tty))
+  case $ensure
   {
-    concat::fragment { "securetty ${tty}":
-      target  => '/etc/securetty',
-      order   => $order,
-      content => "${tty}\n",
+    'present':
+    {
+      if(!empty($tty))
+      {
+        concat::fragment { "securetty ${tty}":
+          target  => '/etc/securetty',
+          order   => $order,
+          content => "${tty}\n",
+        }
+      }
     }
+    default: {}
   }
+
+
 }

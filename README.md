@@ -21,6 +21,8 @@ PAM modules, /etc/security/limits.conf and /etc/securetty management
 
 ## Module Description
 
+PAM module management for RHEL and derivatives, partial support for Ubuntu
+
 ### pam::lockout
 
 CIS compliance using pam_faillock for CentOS 6 and 7:
@@ -132,7 +134,7 @@ All items support the values -1, unlimited or infinity indicating no limit, exce
 
 ## Limitations
 
-This is where you list OS compatibility, version compatibility, etc.
+* Partial Ubuntu support
 
 ## Development
 
@@ -141,7 +143,7 @@ have some test to check both presence and absence of any feature
 
 ### TODO
 
-TODO list
+* improve Ubuntu support
 
 ### Contributing
 
