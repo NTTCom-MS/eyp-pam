@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.1.17
+
+* Added flag to disable security/limits.conf management: **pam::manage_security_limits**
+
 ## 0.1.16
 
 * added ensure to **pam::securetty**
