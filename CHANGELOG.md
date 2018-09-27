@@ -3,6 +3,7 @@
 ## 0.1.17
 
 * Added flag to disable security/limits.conf management: **pam::manage_security_limits**
+* Updated medatata for SLES
 
 ## 0.1.16
 
