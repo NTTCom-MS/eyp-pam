@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.1.18
+
+* Added support for SLES 12.4
+
 ## 0.1.17
 
 * Added flag to disable security/limits.conf management: **pam::manage_security_limits**
