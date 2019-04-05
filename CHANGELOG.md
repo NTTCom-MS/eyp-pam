@@ -1,8 +1,15 @@
 # CHANGELOG
 
-## 0.1.18
+## 0.1.20
+
+* renamed **cracklib** facts to **pam_cracklib**
+
+## 0.1.19
 
 * added support for Ubuntu 16.04 and 18.04 to **pam::cracklib** using libpam-pwquality
+
+## 0.1.18
+
 * Added support for SLES 12.4
 
 ## 0.1.17
