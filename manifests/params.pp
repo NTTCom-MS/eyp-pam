@@ -68,6 +68,10 @@ class pam::params {
             /^1[468].*$/:
             {
               $pam_lockout='tally2'
+
+              $cracklib_package_name = 'libpam-pwquality'
+              $pwqualityconf = '/etc/security/pwquality.conf'
+              $pamcracklib = false
             }
             default: { fail("Unsupported Ubuntu version! - ${::operatingsystemrelease}")  }
           }

@@ -30,7 +30,6 @@ class pam::cracklib::config inherits pam::cracklib {
     #   ensure  => 'present',
     #   content => template("${module_name}/exec_checkpamcracklib.erb"),
     # }
-
     exec { 'pam_cracklib setup':
       command => template("${module_name}/cracklib/exec_sedpamcracklib.erb"),
       unless  => template("${module_name}/cracklib/exec_checkpamcracklib.erb"),

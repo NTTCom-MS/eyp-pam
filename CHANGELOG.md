@@ -2,6 +2,7 @@
 
 ## 0.1.18
 
+* added support for Ubuntu 16.04 and 18.04 to **pam::cracklib** using libpam-pwquality
 * Added support for SLES 12.4
 
 ## 0.1.17
