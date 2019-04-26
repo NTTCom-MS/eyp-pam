@@ -86,7 +86,7 @@ class pam::unix::config inherits pam::unix {
     }
     else
     {
-      fail("UNIMPLEMENTED")
+      fail('UNIMPLEMENTED')
     }
   }
 
