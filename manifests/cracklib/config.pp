@@ -1,4 +1,3 @@
-#
 class pam::cracklib::config inherits pam::cracklib {
 
   Exec {

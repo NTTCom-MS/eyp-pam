@@ -1,7 +1,3 @@
-# == Class: pam
-#
-# === pam::install documentation
-#
 class pam::install inherits pam {
 
   if($pam::manage_package)

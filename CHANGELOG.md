@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.1.21
+
+* Added support for Ubuntu to **pam::unix**
+
 ## 0.1.20
 
 * renamed **cracklib** facts to **pam_cracklib**

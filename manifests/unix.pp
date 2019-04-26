@@ -1,11 +1,8 @@
+# to be renamed
 class pam::unix(
                       $manage_package        = true,
                       $package_ensure        = 'installed',
-                      $manage_service        = true,
-                      $manage_docker_service = true,
-                      $service_ensure        = 'running',
-                      $service_enable        = true,
-                      $password_hash_algo    = $password_hash_algo_default,
+                      $password_hash_algo    = $pam::params::password_hash_algo_default,
                       $remember              = '5',
                     ) inherits pam::params{
 

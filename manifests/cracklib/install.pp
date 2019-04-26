@@ -1,7 +1,3 @@
-# == Class: cracklib
-#
-# === cracklib::install documentation
-#
 class pam::cracklib::install inherits pam::cracklib {
 
   if($pam::cracklib::manage_package)

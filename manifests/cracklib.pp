@@ -1,4 +1,4 @@
-#
+# to be renamed to something like password_quality
 class pam::cracklib(
                       $manage_package        = true,
                       $package_ensure        = 'installed',
