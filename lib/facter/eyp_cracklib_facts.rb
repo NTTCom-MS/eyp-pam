@@ -21,22 +21,12 @@ unless minlen.nil? or minlen.empty?
         minlen
       end
   end
-  Facter.add('eyp_pam_cracklib_password_minlen_description') do
-      setcode do
-        'Minimum acceptable size for the new password'
-      end
-  end
 end
 
 unless ocredit.nil? or ocredit.empty?
   Facter.add('eyp_pam_cracklib_password_ocredit') do
       setcode do
         ocredit
-      end
-  end
-  Facter.add('eyp_pam_cracklib_password_ocredit_description') do
-      setcode do
-        'The maximum credit for having other characters in the new password'
       end
   end
 end
@@ -47,11 +37,6 @@ unless lcredit.nil? or lcredit.empty?
         lcredit
       end
   end
-  Facter.add('eyp_pam_cracklib_password_lcredit_description') do
-      setcode do
-        'The maximum credit for having lowercase characters in the new password'
-      end
-  end
 end
 
 unless ucredit.nil? or ucredit.empty?
@@ -60,22 +45,12 @@ unless ucredit.nil? or ucredit.empty?
         ucredit
       end
   end
-  Facter.add('eyp_pam_cracklib_password_ucredit_description') do
-      setcode do
-        'The maximum credit for having uppercase characters in the new password'
-      end
-  end
 end
 
 unless dcredit.nil? or dcredit.empty?
   Facter.add('eyp_pam_cracklib_password_dcredit') do
       setcode do
         dcredit
-      end
-  end
-  Facter.add('eyp_pam_cracklib_password_dcredit_description') do
-      setcode do
-        'The maximum credit for having digits in the new password'
       end
   end
 end

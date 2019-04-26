@@ -62,6 +62,7 @@ class pam::params {
       $use_authconfig=false
       $use_pwhistory=true
       $pwhistory_pamd='/etc/pam.d/common-password'
+      $password_hash_algo_default = 'sha512'
       case $::operatingsystem
       {
         'Ubuntu':

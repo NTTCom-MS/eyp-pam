@@ -53,7 +53,35 @@ class pam::unix::config inherits pam::unix {
         require => Exec['red wedding'],
       }
 
-      #TODO: ${pam::unix::password_hash_algo}
+      # TODO: ${pam::unix::password_hash_algo}
+      # RHEL7      pam_unix.so  use_authtok try_first_pass nullok sha512 shadow
+      # Ubuntu 16: pam_unix.so  use_authtok try_first_pass sha512 obscure
+
+      # nullok
+      #     The default action of this module is to not permit the user access to a service if their official password is blank. The nullok argument overrides this default and allows any user with a blank
+      #     password to access the service.
+      #
+      # shadow
+      #     Try to maintain a shadow based system.
+      #
+      # obscure
+      #     Enable some extra checks on password strength. These checks are based on the "obscure" checks in the original shadow package. The behavior is similar to the pam_cracklib module, but for
+      #     non-dictionary-based checks. The following checks are implemented:
+      #
+      #     Palindrome
+      #         Verifies that the new password is not a palindrome of (i.e., the reverse of) the previous one.
+      #
+      #     Case Change Only
+      #         Verifies that the new password isn't the same as the old one with a change of case.
+      #
+      #     Similar
+      #         Verifies that the new password isn't too much like the previous one.
+      #
+      #     Simple
+      #         Is the new password too simple? This is based on the length of the password and the number of different types of characters (alpha, numeric, etc.) used.
+      #
+      #     Rotated
+      #         Is the new password a rotated version of the old password? (E.g., "billy" and "illyb")
 
     }
     else
