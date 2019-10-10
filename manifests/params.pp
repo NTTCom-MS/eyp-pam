@@ -38,7 +38,7 @@ class pam::params {
           $real_password_auth_conf='/etc/pam.d/password-auth'
           $real_systema_auth_conf='/etc/pam.d/system-auth'
         }
-        /^7.*$/:
+        /^[78].*$/:
         {
           $password_hash_algo_default = 'sha512'
           $cracklib_package_name = 'libpwquality'

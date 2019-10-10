@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.1.23
+
+* Added support for **RHEL 8**
+
 ## 0.1.22
 
 * dropped descriptions for cracklib facts
