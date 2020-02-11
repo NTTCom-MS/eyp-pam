@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 0.1.24
+
+* **pam::lockout**
+  - added support for **Ubuntu 18.04**
+
 ## 0.1.23
 
 * Added support for **RHEL 8**
