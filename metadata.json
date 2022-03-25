@@ -1,6 +1,6 @@
 {
   "name": "eyp-pam",
-  "version": "0.1.24",
+  "version": "0.1.25",
   "author": "eyp",
   "summary": "PAM modules, /etc/security/limits.conf and /etc/securetty management",
   "license": "Apache-2.0",
@@ -35,7 +35,7 @@
     },
     {
       "operatingsystem": "Ubuntu",
-      "operatingsystemrelease": [ "14.04", "16.04", "18.04" ]
+      "operatingsystemrelease": [ "14.04", "16.04", "18.04", "20.04" ]
     },
     {
       "operatingsystem": "SLES",
