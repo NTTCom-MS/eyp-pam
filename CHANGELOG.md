@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.1.25
+
+* Added **Ubuntu 20** support
+
 ## 0.1.24
 
 * **pam::lockout**
